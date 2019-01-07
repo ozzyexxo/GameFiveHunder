@@ -5,7 +5,7 @@ module.exports = {
         this.value = value;
         this.name = name;
     }
-
+}
 //TODO: Find away to initialize Card-object inside the module as well, 
 //since it's needed for the generateDeck-function
 
