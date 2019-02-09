@@ -1,0 +1,14 @@
+/* Post actions */
+export const FETCH_POSTS = "FETCH_POSTS";
+export const NEW_POST = "NEW_POST";
+
+/* ChatKit actions */
+export const CHATKIT_CREATE_USER = "CHATKIT_CREATE_USER";
+export const CHATKIT_NEW_MESSAGE = "CHATKIT_NEW_MESSAGE";
+export const CHATKIT_GET_ROOMS = "CHATKIT_GET_ROOMS";
+export const CHATKIT_SUBSCRIBE_ROOM = "CHATKIT_SUBSCRIBE_ROOM";
+export const CHATKIT_HANDLE_MESSAGE = "CHATKIT_HANDLE_MESSAGE";
+export const CHATKIT_CREATE_ROOM = "CHATKIT_CREATE_ROOM";
+
+/* Chatkit Helper */
+export const CHATKIT_CLEAR_MESSAGES = "CHATKIT_CLEAR_MESSAGES";
