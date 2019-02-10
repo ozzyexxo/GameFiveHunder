@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import RoomItem from "./room_item";
+import { ListGroup } from "reactstrap";
 
 class RoomList extends Component {
   state = {};
@@ -13,12 +14,12 @@ class RoomList extends Component {
     ];
     return (
       <div>
-        <ul>
+        <ListGroup>
           <h3>Room List</h3>
           {chat_rooms.map(room => {
             return <RoomItem key={room.id} room={room} />;
           })}
-        </ul>
+        </ListGroup>
       </div>
     );
   }

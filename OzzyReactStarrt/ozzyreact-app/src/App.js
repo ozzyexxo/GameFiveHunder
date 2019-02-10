@@ -12,6 +12,7 @@ import VideoMbed from "./components/videos_api";
 import ReduxApi from "./components/redux_api";
 import ReduxForm from "./components/redux_form";
 import ReduxChatKit from "./components/redux_chatkit";
+import ReduxCardGame from "./components/cardgame/redux_card_game";
 
 class App extends Component {
   state = {};
@@ -30,6 +31,7 @@ class App extends Component {
           <Route path={"/redux1"} component={ReduxApi} />
           <Route path={"/redux2"} component={ReduxForm} />
           <Route path={"/reduxchat"} component={ReduxChatKit} />
+          <Route path={"/reduxcardgame"} component={ReduxCardGame} />
         </Switch>
       </div>
     );

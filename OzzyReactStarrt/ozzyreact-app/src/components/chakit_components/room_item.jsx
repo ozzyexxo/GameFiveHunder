@@ -2,19 +2,18 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { ChatKitSubscribeRoom } from "../../Redux/Actions/chatkitActions";
+import { ListGroupItem } from "reactstrap";
 
 class RoomItem extends Component {
   state = {};
   render() {
-    console.log("room id : " + this.props.room.id);
-    console.log("Redux room id : " + this.props.chatkit_current_room_id);
-
     const selected =
       this.props.room.id === this.props.chatkit_current_room_id
-        ? { fontWeight: "bold" }
-        : { fontWeight: "lighter" };
+        ? "warning"
+        : "success";
+
     return (
-      <li key={this.props.room.id} style={selected}>
+      <ListGroupItem key={this.props.room.id} color={selected}>
         <a
           onClick={() => {
             this.props.ChatKitSubscribeRoom(
@@ -26,7 +25,7 @@ class RoomItem extends Component {
         >
           # {this.props.room.name}
         </a>
-      </li>
+      </ListGroupItem>
     );
   }
 }

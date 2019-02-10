@@ -33,6 +33,7 @@ class NavBar extends Component {
             <NavRouterLink link_to="/redux1" title="Redux_API" />
             <NavRouterLink link_to="/redux2" title="Redux_Form" />
             <NavRouterLink link_to="/reduxchat" title="ChatKit_Redux" />
+            <NavRouterLink link_to="/reduxcardgame" title="CardGame" />
           </ul>
           <form className="form-inline my-2 my-lg-0">
             <input

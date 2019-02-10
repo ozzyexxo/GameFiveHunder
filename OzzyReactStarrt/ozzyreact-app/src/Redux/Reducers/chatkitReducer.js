@@ -3,10 +3,12 @@ import {
   CHATKIT_GET_ROOMS,
   CHATKIT_SUBSCRIBE_ROOM,
   CHATKIT_HANDLE_MESSAGE,
-  CHATKIT_CLEAR_MESSAGES
+  CHATKIT_CLEAR_MESSAGES,
+  CHATKIT_INIT
 } from "../Actions/types";
 
 const initialState = {
+  chatkit_params: null,
   chatkit_user: null,
   chatkit_messages: [],
   chatkit_current_room_id: "",
@@ -16,6 +18,11 @@ const initialState = {
 
 export default function(state = initialState, action) {
   switch (action.type) {
+    case CHATKIT_INIT:
+      return {
+        ...state,
+        chatkit_params: action.payload
+      };
     case CHATKIT_CREATE_USER:
       return {
         ...state,

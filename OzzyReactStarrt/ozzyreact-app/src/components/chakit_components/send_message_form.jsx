@@ -35,7 +35,7 @@ class SendMessageForm extends Component {
           placeholder="Type the text message here"
           value={this.state.chat_msg}
         />
-        <button>Send</button>
+        <button className="btn btn-secondary">Send</button>
       </form>
     );
   }

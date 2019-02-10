@@ -4,8 +4,36 @@ import {
   CHATKIT_SUBSCRIBE_ROOM,
   CHATKIT_CREATE_USER,
   CHATKIT_HANDLE_MESSAGE,
-  CHATKIT_CLEAR_MESSAGES
+  CHATKIT_CLEAR_MESSAGES,
+  CHATKIT_USER_CONNECT,
+  CHATKIT_INIT
 } from "../Actions/types";
+
+export const ChatKitInit = (ChatKit, tokenUrl, instanceLocator) => dispatch => {
+  dispatch({
+    type: CHATKIT_INIT,
+    payload: {
+      chatkit: ChatKit,
+      token_url: tokenUrl,
+      instance_locator: instanceLocator
+    }
+  });
+};
+
+export const ChatKitConnectUser = (chatkit_params, user_name) => dispatch => {
+  const chatManager = new chatkit_params.chatkit.ChatManager({
+    instanceLocator: chatkit_params.instance_locator,
+    userId: user_name,
+    tokenProvider: new chatkit_params.chatkit.TokenProvider({
+      url: chatkit_params.token_url
+    })
+  });
+  dispatch(ChatKitCreateUser(null));
+  chatManager.connect().then(currentUser => {
+    dispatch(ChatKitCreateUser(currentUser));
+    dispatch(ChatKitGetRooms(currentUser));
+  });
+};
 
 export const ChatKitCreateUser = chatkit_user => dispatch => {
   dispatch({

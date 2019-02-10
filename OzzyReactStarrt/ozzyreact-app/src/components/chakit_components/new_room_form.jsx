@@ -38,7 +38,7 @@ class NewRoomForm extends Component {
           placeholder="Type room name"
           value={this.state.chatroom_name}
         />
-        <button>Create</button>
+        <button className="btn btn-secondary">Create</button>
       </form>
     );
   }
